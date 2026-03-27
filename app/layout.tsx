@@ -3,8 +3,8 @@ import "./globals.css";
 import { SmoothScrollProvider } from "./components/SmoothScrollProvider";
 
 export const metadata: Metadata = {
-  title: "SonicArchitect | AI Voice Agent Platform",
-  description: "Transform customer conversations with AI voice agents. Automate 10,000+ calls simultaneously. Reduce costs by 60%.",
+  title: "nuvlyx | AI Voice Agent Platform",
+  description: "Transform customer conversations with AI voice agents. Automate 1,000+ calls simultaneously. Reduce costs by 60%.",
   keywords: ["AI voice agent", "conversational AI", "voice automation", "customer service AI"],
 };
 

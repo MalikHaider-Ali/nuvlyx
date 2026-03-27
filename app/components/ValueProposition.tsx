@@ -14,7 +14,7 @@ const benefits = [
   },
   {
     icon: "call_split",
-    title: "10,000+ Concurrent",
+    title: "1,000+ Concurrent",
     description:
       "Infinite scalability without adding headcount. Every customer gets answered in under 1 second.",
     bgColor: "bg-indigo-50",

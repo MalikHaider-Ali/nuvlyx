@@ -1,12 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import Image from "next/image";
 
 export default function Hero() {
-  const [isListening, setIsListening] = useState(true);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -84,41 +81,9 @@ export default function Hero() {
             variants={itemVariants}
             className="text-gray-600 text-lg md:text-xl max-w-xl leading-relaxed"
           >
-            Automate 10,000+ calls simultaneously. Reduce costs by 60%. Deliver
+            Automate calls simultaneously. Reduce costs by 60%. Deliver
             24/7 human-like service that never tires.
           </motion.p>
-
-          
-
-          {/* Trust Bar */}
-          <motion.div
-            variants={itemVariants}
-            className="pt-12 border-t border-gray-200"
-          >
-            <p className="text-sm text-gray-500 uppercase tracking-widest mb-6 font-semibold">
-              Trusted by 500+ global enterprises
-            </p>
-            <div className="flex flex-wrap gap-8 items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
-              {logos.map((logo, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, opacity: 1 }}
-                  className="grayscale hover:grayscale-0 transition-all duration-300"
-                >
-                  <Image
-                    src={logo}
-                    alt={`Partner ${index + 1}`}
-                    width={100}
-                    height={24}
-                    className="h-6 w-auto object-contain"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </motion.div>
 
         {/* Right Column - Interactive Demo Widget */}
@@ -136,18 +101,14 @@ export default function Hero() {
             {/* Microphone Icon */}
             <div className="mb-8">
               <motion.div
-                animate={
-                  isListening
-                    ? {
-                        scale: [1, 1.05, 1],
-                        boxShadow: [
-                          "0 0 50px rgba(96, 165, 250, 0.4)",
-                          "0 0 80px rgba(96, 165, 250, 0.6)",
-                          "0 0 50px rgba(96, 165, 250, 0.4)",
-                        ],
-                      }
-                    : { scale: 1 }
-                }
+                animate={{
+                  scale: [1, 1.05, 1],
+                  boxShadow: [
+                    "0 0 50px rgba(96, 165, 250, 0.4)",
+                    "0 0 80px rgba(96, 165, 250, 0.6)",
+                    "0 0 50px rgba(96, 165, 250, 0.4)",
+                  ],
+                }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center shadow-[0_0_50px_rgba(96,165,250,0.4)]"
               >
@@ -174,17 +135,13 @@ export default function Hero() {
                 {[4, 8, 12, 6, 10, 12, 7, 5, 9, 11, 6, 8].map((height, i) => (
                   <motion.div
                     key={i}
-                    animate={
-                      isListening
-                        ? {
-                            height: [
-                              `${height * 4}px`,
-                              `${height * 6}px`,
-                              `${height * 4}px`,
-                            ],
-                          }
-                        : { height: `${height * 2}px` }
-                    }
+                    animate={{
+                      height: [
+                        `${height * 4}px`,
+                        `${height * 6}px`,
+                        `${height * 4}px`,
+                      ],
+                    }}
                     transition={{
                       duration: 0.8,
                       repeat: Infinity,
@@ -197,22 +154,21 @@ export default function Hero() {
                 ))}
               </div>
               <motion.p
-                animate={isListening ? { opacity: [0.6, 1, 0.6] } : { opacity: 0.6 }}
+                animate={{ opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="text-blue-200 font-medium text-sm"
               >
-                {isListening ? "Listening to your command..." : "Ready to start conversation"}
+                AI Voice Agent Ready to Help
               </motion.p>
             </div>
 
-            {/* Action Button */}
+            {/* Book Demo Button */}
             <motion.button
               whileHover={{ scale: 1.02, boxShadow: "0 10px 30px rgba(255, 255, 255, 0.2)" }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => setIsListening(!isListening)}
-              className="bg-white text-gray-900 w-full py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-lg"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white w-full py-4 rounded-xl font-bold text-lg hover:from-blue-600 hover:to-purple-700 transition-all shadow-lg"
             >
-              {isListening ? "Stop Conversation" : "Start Conversation"}
+              Book a Demo →
             </motion.button>
 
             {/* Status Indicator */}

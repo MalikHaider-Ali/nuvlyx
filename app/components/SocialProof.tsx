@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: "500+", label: "ACTIVE CLIENTS" },
-  { value: "5M+", label: "CALLS HANDLED" },
-  { value: "98%", label: "SATISFACTION" },
-  { value: "120ms", label: "AVG. LATENCY" },
+  { value: "50+", label: "Early Adopters" },
+  { value: "100K+", label: "Calls Processed" },
+  { value: "90%+", label: "Satisfaction" },
+  { value: "<300ms", label: "Response Time" },
 ];
 
 function SocialProof() {
